@@ -7,11 +7,12 @@ public class AccountTest {
         Scanner input  = new Scanner(System.in);
 
         // Account object
-        Account account1 = new Account("Roy", 50000);
+        Account account1 = new Account("man", 50000);
 
   //     System.out.println("Welcome to Echo-b Bank");
         JOptionPane.showMessageDialog(null, "Welcome to Echo");
         String name = JOptionPane.showInputDialog("what is your name?");
+
         if (name != account1.getName()) {
 
 
@@ -51,10 +52,23 @@ public class AccountTest {
 
                     break;
                 case 3:
-                    System.out.println("Enter Amount: ");
-                    double withdrawal = input.nextDouble();
+                    //System.out.println("Enter Amount: ");
+                    String wAmount = JOptionPane.showInputDialog("Enter amount: ");
+
+                   // double withdrawal = input.nextDouble();
+                    double withdrawal = Integer.parseInt(wAmount);
+                    // Withdrawal takes place
                     account1.withdraw(withdrawal);
-                    System.out.printf("New balance: $%.2f", account1.getBalance());
+                    // Casting balance to string to output through GUI
+                    String s2 = Double.toString(account1.getBalance());
+
+                    // Assign output message with new balance in "message"
+                    String text = String.format("Your new balance is %s", s2);
+
+                    // Paste new balance on the screen
+                    JOptionPane.showMessageDialog(null, text);
+
+                   // System.out.printf("New balance: $%.2f", account1.getBalance());
                     break;
             }
         }
