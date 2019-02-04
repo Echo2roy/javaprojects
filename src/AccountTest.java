@@ -7,30 +7,62 @@ public class AccountTest {
         Scanner input  = new Scanner(System.in);
 
         // Account object
-        Account account1 = new Account("Echo B", 50000);
+        Account account1 = new Account("Roy", 50000);
 
-        System.out.println("Welcome to Echo-b Bank");
-        System.out.println("Enter \n 1 to check balance\n 2 to Deposit\n 3 to withdraw");
-        int choice = input.nextInt();
+  //     System.out.println("Welcome to Echo-b Bank");
+        JOptionPane.showMessageDialog(null, "Welcome to Echo");
+        String name = JOptionPane.showInputDialog("what is your name?");
+        if (name != account1.getName()) {
 
-        switch (choice)
-        {
-            case 1:
-                System.out.printf("Your balance is: $%.2f", account1.getBalance());
-                break;
-            case 2:
-                System.out.println("Enter Amount: ");
-                double depositAmount = input.nextDouble();
-                account1.deposit(depositAmount);
-                System.out.printf("New balance: $%.2f", account1.getBalance());
-                break;
-            case 3:
-                System.out.println("Enter Amount: ");
-                double withdrawal = input.nextDouble();
-                account1.withdraw(withdrawal);
-                System.out.printf("New balance: $%.2f", account1.getBalance());
-                break;
+
+           // System.out.println("Enter \n 1 to check balance\n 2 to Deposit\n 3 to withdraw");
+            String reply = JOptionPane.showInputDialog("Enter \n 1 to check balance\n 2 to Deposit\n 3 to withdraw");
+            int choice = Integer.parseInt(reply);
+           // int choice = input.nextInt();
+
+            switch (choice) {
+                case 1:
+                    double balance = account1.getBalance();
+                    String s = Double.toString(balance);
+                    String word = String.format("Your balance is %s",s);
+
+                    JOptionPane.showMessageDialog(null, word);
+
+               //   JOptionPane.showMessageDialog(null,s);
+              //    System.out.printf("Your balance is: $%.2f", account1.getBalance());
+                    break;
+                case 2:
+                    //System.out.println("Enter Amount: ");
+                    String read = JOptionPane.showInputDialog("Enter amount: ");
+
+                    //double depositAmount = input.nextDouble();
+                    double depositAmount = Integer.parseInt(read);
+                    account1.deposit(depositAmount);
+
+                    //System.out.printf("New balance: $%.2f", account1.getBalance());
+                    // Casting balance to string to output through GUI
+                    String s1 = Double.toString(account1.getBalance());
+
+                    // Assign output message with new balance in "message"
+                    String message = String.format("Your new balance is %s", s1);
+
+                    // Paste new balance on the screen
+                    JOptionPane.showMessageDialog(null, message);
+
+                    break;
+                case 3:
+                    System.out.println("Enter Amount: ");
+                    double withdrawal = input.nextDouble();
+                    account1.withdraw(withdrawal);
+                    System.out.printf("New balance: $%.2f", account1.getBalance());
+                    break;
+            }
         }
+
+        else {
+            System.out.println("You don't have an account");
+        }
+
 
         //display name
        // System.out.printf("%s balance: $%.2f%n", account1.getName(), account1.getBalance());
