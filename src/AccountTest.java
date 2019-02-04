@@ -6,12 +6,9 @@ public class AccountTest {
         Scanner input  = new Scanner(System.in);
 
         // Account object
-        Account myAccount = new Account();
+        Account account1 = new Account("Echo B");
 
         //display name
-        System.out.printf("Initial name is: %s%n%n", myAccount.getName());
-
-
-
+        System.out.printf("Initial name is: %s%n", account1.getName());
     }
 }
