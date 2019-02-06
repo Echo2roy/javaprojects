@@ -20,7 +20,7 @@ public class CreateTextFile {
     {
         try
         {
-            output = new Formatter("clients.txt"); //open the fi;e
+            output = new Formatter("clients.txt"); //open the file
         }
         catch (SecurityException securityException)
         {
@@ -30,7 +30,7 @@ public class CreateTextFile {
         catch (FileNotFoundException fileNotFoundException)
         {
             System.err.println("Error opening file. Terminating");
-            System.exit(1); //terminate prgram
+            System.exit(1); //terminate program
         }
     }
 
@@ -41,17 +41,17 @@ public class CreateTextFile {
         System.out.printf("%s%n%s%n? ",
                 "Enter Account number, first name, last name and balance.",
                 "Enter end-of-file indicator to end input");
-        while (input.hasNext())//loop until end-of-file indicator
+        //while (input.hasNext())//loop until end-of-file indicator
         {
             try{
-                //out[ut new record to file; assumes valid input
+                //output new record to file; assumes valid input
                 output.format("%d %s %s %.2f%n", input.nextInt(),
                         input.next(), input.next(),input.nextDouble());
             }
             catch (FormatterClosedException formatterClosedException)
             {
                 System.err.println("Error writing to file. Terminating");
-                break;
+             //   break;
             }
             catch (NoSuchElementException elementException)
             {
