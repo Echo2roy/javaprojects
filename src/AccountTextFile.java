@@ -51,6 +51,7 @@ public class AccountTextFile {
                 record.setBalance(input.nextDouble());
                 record.setName(input.nextLine());
 
+                //Writing on file
                 if(record.getBalance()>0){
                     //write new record
                     output.format("%.2f, %s\n", record.getBalance(),
@@ -74,5 +75,11 @@ public class AccountTextFile {
             System.out.printf("%s\n","?");
         } //end while
     } //end method add Records
-    
+
+    //close file
+    public void closeFile()
+    {
+        if(output != null)
+            output.close();
+    }
 }
