@@ -27,7 +27,7 @@ public class AccountTextFile {
         }
     }
 
-    public void addRecord()
+    public void addRecords()
     {
         //object to be written to file
         Account record = new Account();
@@ -41,13 +41,14 @@ public class AccountTextFile {
                 "On UNIX/Linux/Mac OS X type <ctrl> d then press Enter",
                 "On Windows type <ctrl> z then press Enter" );
         System.out.printf("%s\n%s",
-                "Enter account number(>0), first name, last name and balance",
+                "Enter account balance and name",
                 "?");
 
-        while(input.hasNext())// loop until end-of-file indicator
+       // while(input.hasNext())// loop until end-of-file indicator
         {
             try              //output values to file
             {
+
                 record.setBalance(input.nextDouble());
                 record.setName(input.nextLine());
 
@@ -72,7 +73,7 @@ public class AccountTextFile {
                 input.nextLine(); // discard input so user can try again
             } //end catch
 
-            System.out.printf("%s\n","?");
+           // System.out.printf("%s\n","?");
         } //end while
     } //end method add Records
 
