@@ -7,7 +7,7 @@ public class AccountTest {
         Scanner input  = new Scanner(System.in);
 
         // Account object
-        Account account1 = new Account("man", 50000);
+        Account account1 = new Account("1234h","man", 50000);
 
   //     System.out.println("Welcome to Echo-b Bank");
         JOptionPane.showMessageDialog(null, "Welcome to Echo");

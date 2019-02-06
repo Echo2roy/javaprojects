@@ -1,5 +1,6 @@
 
 public class Account {
+    private String pin;
     private String name; // Instance variable
     private double balance;
 
@@ -7,11 +8,12 @@ public class Account {
     //constructor initialises name with parameter name //Automatic setter
     public Account()
     {
-        this("",0.0);
+        this("","",0.0);
     }
 
-    public Account(String name, double balance)
+    public Account(String pin, String name, double balance)
     {
+        this.pin = name;
         this.name = name;
         if (balance > 0.0)
             this.balance = balance;
@@ -29,6 +31,14 @@ public class Account {
             System.out.println("You don't have enough funds");
         else
             balance = balance - withdrawal;
+    }
+    public void setPin(String pin)
+    {
+        this.pin = pin;
+    }
+    public String getPin()
+    {
+        return pin;
     }
 
     public double getBalance(){

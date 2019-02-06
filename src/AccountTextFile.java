@@ -40,22 +40,26 @@ public class AccountTextFile {
                 "when you are prompted to enter input.",
                 "On UNIX/Linux/Mac OS X type <ctrl> d then press Enter",
                 "On Windows type <ctrl> z then press Enter" );
-        System.out.printf("%s\n%s",
-                "Enter account balance and name",
-                "?");
+       // System.out.printf("%s\n%s",
+           //     "Enter account balance and name",
+         //       "?");
 
        // while(input.hasNext())// loop until end-of-file indicator
         {
             try              //output values to file
             {
-
+                System.out.print("Enter Pin: ");
+                record.setPin(input.next());
+                System.out.print("Enter Balance: ");
                 record.setBalance(input.nextDouble());
-                record.setName(input.nextLine());
+                System.out.print("Enter Name: ");
+                record.setName(input.next());
+              //  record.setPin(input.nextLine());
 
                 //Writing on file
                 if(record.getBalance()>0){
                     //write new record
-                    output.format("%.2f, %s\n", record.getBalance(),
+                    output.format("%s,%.2f, %s\n",record.getPin(), record.getBalance(),
                             record.getName());
                 }// end if
                 else{
