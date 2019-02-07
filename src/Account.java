@@ -59,4 +59,10 @@ public class Account {
         return name; // return value of the name to caller
     }
 
+    public void createAccount(){
+        AccountTextFile accountTextFile = new AccountTextFile();
+        accountTextFile.openFile();
+        accountTextFile.addRecords();
+        accountTextFile.closeFile();
+    }
 }
