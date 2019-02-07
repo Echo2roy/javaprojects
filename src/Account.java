@@ -64,5 +64,8 @@ public class Account {
         accountTextFile.openFile();
         accountTextFile.addRecords();
         accountTextFile.closeFile();
+        System.out.print("Account created!");
+        System.out.printf("Your credentials are %nAccount PIN: %s%nAccount Balance: %.2f%n" +
+                "Account name: %s%n", accountTextFile.getPin(),accountTextFile.getBalance(),accountTextFile.getName());
     }
 }

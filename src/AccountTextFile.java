@@ -5,7 +5,7 @@ import java.util.FormatterClosedException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class AccountTextFile {
+public class AccountTextFile extends Account{
     private Formatter output; // object used to output text to file
 
     //enable user to open file
@@ -30,7 +30,6 @@ public class AccountTextFile {
     public void addRecords()
     {
         //object to be written to file
-        Account record = new Account();
 
         Scanner input = new Scanner(System.in);
 
@@ -49,18 +48,18 @@ public class AccountTextFile {
             try              //output values to file
             {
                 System.out.print("Enter Pin: ");
-                record.setPin(input.next());
+                setPin(input.next());
                 System.out.print("Enter Balance: ");
-                record.setBalance(input.nextDouble());
+                setBalance(input.nextDouble());
                 System.out.print("Enter Name: ");
-                record.setName(input.next());
+                setName(input.next());
               //  record.setPin(input.nextLine());
 
                 //Writing on file
-                if(record.getBalance()>0){
+                if(getBalance()>0){
                     //write new record
-                    output.format("%s,%.2f, %s\n",record.getPin(), record.getBalance(),
-                            record.getName());
+                    output.format("%s,%.2f, %s\n",getPin(), getBalance(),
+                            getName());
                 }// end if
                 else{
                     System.out.println("Account Balance ,ust be greater than 0");

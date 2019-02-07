@@ -8,6 +8,7 @@ public class AccountTest {
 
         // Account object
         Account account1 = new Account("1234h","man", 50000);
+        Account account2 = new Account();
 
   //     System.out.println("Welcome to Echo-b Bank");
         JOptionPane.showMessageDialog(null, "Welcome to Echo");
@@ -17,7 +18,7 @@ public class AccountTest {
 
 
            // System.out.println("Enter \n 1 to check balance\n 2 to Deposit\n 3 to withdraw");
-            String reply = JOptionPane.showInputDialog("Enter \n 1 to check balance\n 2 to Deposit\n 3 to withdraw");
+            String reply = JOptionPane.showInputDialog("Enter \n 1 to check balance\n 2 to Deposit\n 3 to withdraw\n 4 to Create a new account");
             int choice = Integer.parseInt(reply);
            // int choice = input.nextInt();
 
@@ -72,10 +73,7 @@ public class AccountTest {
                     break;
                 case 4:
                     //Create account
-                    account1.createAccount();
-                    System.out.print("Your account has been created");
-                    System.out.printf("Your credentials are %nAccount PIN: %s%nAccount Balance: %.2f%n" +
-                            "Account name: %s%n", account1.getPin(),account1.getBalance(),account1.getName());
+                    account2.createAccount();
             }
         }
 
