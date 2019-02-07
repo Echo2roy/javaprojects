@@ -70,6 +70,12 @@ public class AccountTest {
 
                    // System.out.printf("New balance: $%.2f", account1.getBalance());
                     break;
+                case 4:
+                    //Create account
+                    account1.createAccount();
+                    System.out.print("Your account has been created");
+                    System.out.printf("Your credentials are %nAccount PIN: %s%nAccount Balance: %.2f%n" +
+                            "Account name: %s%n", account1.getPin(),account1.getBalance(),account1.getName());
             }
         }
 
